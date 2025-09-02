@@ -1,0 +1,61 @@
+while True:
+
+    print("Calculator program")
+    print(" "*10)
+
+    while True:
+        operators = ["+", "-", "*", "/"]
+        operator = input("Enter an operator (+, -, *, /): ") 
+        if operator not in operators:
+            print(f'"{operator}" is not a valid operator. Try again.') 
+        else:
+            break
+
+    while True:
+        try:
+            num1 = int(input("Enter the first number: ")) 
+            break
+        
+        except ValueError:
+            print("Please enter a valid number") 
+
+    while True:
+        try:
+            num2 = int(input("Enter the second number: ")) 
+            break
+            
+        except ValueError:
+            print("Please enter a valid number")   
+
+    if operator == "+":
+        add_sum = num1 + num2
+        print(f"{num1} + {num2} = {add_sum}")
+    
+
+    elif operator == "-":
+         sub_sum = num1 - num2
+         print(f"{num1} - {num2} = {sub_sum}")
+    
+
+    elif operator == "*":
+        mul_sum = num1 * num2
+        print(f"{num1} * {num2} = {mul_sum}")
+    
+     
+    elif operator == "/":
+        if num1 == 0 or num2 == 0:
+            print("Error. Cannot divide by 0.")
+        else:
+             div_sum = num1 / num2
+             print(f"{num1} / {num2} = {div_sum}")
+     
+    else: 
+        print(f"{operator} is not a valid operator")
+
+    calc_again = input("Would you like to perform another calculation? (y/n): ")
+
+    if calc_again.lower()!= "y":
+        print("Goodbye!")
+        break
+         
+        
